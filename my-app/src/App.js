@@ -11,7 +11,7 @@ export class App extends React.Component{
       <div>
       <Hello/>
       <Welcome name = {<strong>Rita</strong>} age = {14}/>
-      <Counter/>
+      <Counter initialValue={9} incrementBy={3} timeOut={500}/>
       </div>
     )
     
