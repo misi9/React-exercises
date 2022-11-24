@@ -5,8 +5,8 @@ export class Counter extends React.Component{
  state = {
      count: this.props.initialValue,
  }
- constructor(props){
-     super(props)
+ 
+ componentDidMount(){
      setInterval(()=>{
        this.setState((state)=>{
          return{
@@ -16,7 +16,7 @@ export class Counter extends React.Component{
      },this.props.timeOut)
  }
 
-
+ //Penso che il costruttore non serva siccome componentDidMount() è invocato dopo che il componente è montato (cioè inserito nell’albero del DOM)
 
  render(){
      return(
