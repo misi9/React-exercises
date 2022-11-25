@@ -5,6 +5,7 @@ import { Counter } from "./Counter";
 import { Hello } from "./Hello"
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { LoginForm } from "./LoginForm";
+import { UncontrolledLogin } from "./UncontrolledLogin";
 import {Welcome} from "./Welcome"
 
 
@@ -24,6 +25,8 @@ export class App extends React.Component{
       <InteractiveWelcome/>
       <br />
       <LoginForm/>
+      <br />
+      <UncontrolledLogin/>
       </div>
     )
     
