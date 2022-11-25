@@ -4,21 +4,24 @@ export class LoginForm extends React.Component{
   state = {
       username: '',
       password: '',
-      remember: false
+      button: true
   }
 
   InputTextField = (event) => {
      const value = event.target.value
      const name = event.target.name
      const type = event.target.type
-     const checked = event.target.checked
+     const disabled =  event.target.disabled
 
      this.setState ({
-          [name] : type === 'checkbox' ? checked : value,
+          [name] : type === 'button' ? disabled : value,
      }
 
      )
   }
+
+
+
   componentDidUpdate(){
       console.log(this.state)
   }
@@ -28,9 +31,11 @@ export class LoginForm extends React.Component{
     render(){
         return(
          <div>
+             <div>
+                 <button name="button" type="button" disabled={!Boolean(this.state.username && this.state.password)} onChange={this.InputTextField}>Click</button>
+             </div>
              <input name="username" value={this.state.username} onChange={this.InputTextField}/>
              <input name="password" type="password" value={this.state.password} onChange={this.InputTextField}/>
-             <input name="remember" type="checkbox" checked={this.state.remember} onChange={this.InputTextField}/>
          </div>
         )
     }
