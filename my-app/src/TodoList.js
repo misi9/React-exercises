@@ -5,8 +5,9 @@ export class TodoList extends React.Component{
      items: [
          'eat',
          'pray',
-         'love'
-     ]
+         'love',
+     ],
+     input:'',
  }
 
  inputAddValue = (event) => {
@@ -22,8 +23,11 @@ export class TodoList extends React.Component{
     event.preventDefault()
  
     this.setState({
-      items:[...this.state.items, this.state.input]
+      items:[...this.state.items, this.state.input],
+      input:''
+      
     })
+
 }
 
 
@@ -35,8 +39,8 @@ export class TodoList extends React.Component{
                <li key={item + index}>{item}</li>
                ))}
            </ul> 
-           <input onChange={this.inputAddValue}/>
-           <button onClick={this.addItems}>Aggiungi</button>
+           <input value={this.state.input} onChange={this.inputAddValue} />
+           <button onClick={this.state.input !=='' ? this.addItems : undefined}>Aggiungi</button>
            </div>
         )
     }
