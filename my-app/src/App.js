@@ -1,5 +1,6 @@
 import React from "react";
-import { Welcome } from "./Welcome";
+import { LoginForm } from "./LoginForm";
+
 
 
 
@@ -9,7 +10,7 @@ export class App extends React.Component{
   render(){
     return (
       <div>
-      <Welcome/>
+      <LoginForm/>
       </div>
     )
     

@@ -48,7 +48,7 @@ export class LoginForm extends React.Component{
         return(
          <div>
              <div>
-                 <button name="button" type="button" disabled={!Boolean(this.state.username && this.state.password)} onChange={this.InputTextField}>Click</button>
+                 <button name="button" type="button" disabled={!Boolean(this.state.username && this.state.password)} onChange={this.InputTextField} style={{background: this.state.password.length < 8 ? 'red' : 'green'}} >Click</button>
                  <button onClick={this.ResetValueButton}>Reset</button>
              </div>
              <input name="username" value={this.state.username} onChange={this.InputTextField}/>
