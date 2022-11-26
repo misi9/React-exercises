@@ -29,6 +29,14 @@ export class TodoList extends React.Component{
     })
 
 }
+ResetItems= (event) =>{
+    event.preventDefault()
+    this.setState({
+      items: []
+    }
+
+    )
+}
 
 
     render(){
@@ -41,6 +49,7 @@ export class TodoList extends React.Component{
            </ul> 
            <input value={this.state.input} onChange={this.inputAddValue} />
            <button onClick={this.state.input !=='' ? this.addItems : undefined}>Aggiungi</button>
+           <button onClick={this.ResetItems}>Reset</button>
            </div>
         )
     }
