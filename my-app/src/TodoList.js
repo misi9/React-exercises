@@ -37,6 +37,13 @@ ResetItems= (event) =>{
 
     )
 }
+ClearItem= (index) =>{
+ const items = this.state.items
+ items.splice(index, 1)
+ this.setState({
+     items
+ })
+}
 
 
     render(){
@@ -44,7 +51,10 @@ ResetItems= (event) =>{
             <div>
            <ul>
                {this.state.items.map((item,index)=>( 
+            <div>
                <li key={item + index}>{item}</li>
+               <button onClick={()=>this.ClearItem(index)}>Elimina item</button>
+            </div>
                ))}
            </ul> 
            <input value={this.state.input} onChange={this.inputAddValue} />
