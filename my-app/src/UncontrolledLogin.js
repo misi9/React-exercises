@@ -25,7 +25,7 @@ export class UncontrolledLogin extends React.Component{
             <div>
                 <h1>Uncontrolled Login</h1>
              <form onSubmit={this.SumbitUncontrolledComponents}>
-                 <input name="username" />
+                 <input name="username" autoFocus/>
                  <input name="password" type="password" />
                  <input name="remember" type="checkbox" />
                  <button type="submit">Login</button>
