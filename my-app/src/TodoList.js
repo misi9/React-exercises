@@ -49,14 +49,7 @@ ClearItem= (index) =>{
     render(){
         return(
             <div>
-           <ul>
-               {this.state.items.map((item,index)=>( 
-            <div>
-               <li key={item + index}>{item}</li>
-               <button onClick={()=>this.ClearItem(index)}>Elimina item</button>
-            </div>
-               ))}
-           </ul> 
+             {this.props.render(this.state.items, this.ClearItem)}
            <input value={this.state.input} onChange={this.inputAddValue} />
            <button onClick={this.state.input !=='' ? this.addItems : undefined}>Aggiungi</button>
            <button onClick={this.ResetItems}>Reset</button>

@@ -1,19 +1,24 @@
 import React from "react";
-import { Container } from "./Container";
-import { LoginForm } from "./LoginForm";
 
+import { TodoList } from "./TodoList";
 
-
-
-
-
-export class App extends React.Component{
-  render(){
+export class App extends React.Component {
+  render() {
     return (
-    <Container title="Il mio container">
-      <LoginForm/>
-    </Container>
-    )
-    
+      <div>
+        <TodoList
+          render={(items, HandleRemove) => (
+            <ul>
+              {items.map((item, index) => (
+                <div>
+                  <li key={index}>{item}</li>
+                  <button onClick={() => HandleRemove(index)}>Remove</button>
+                </div>
+              ))}
+            </ul>
+          )}
+        />
+      </div>
+    );
   }
 }
