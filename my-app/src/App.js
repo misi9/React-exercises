@@ -1,23 +1,28 @@
 import React from "react";
+import { DisplayLanguage } from "./DisplayLanguage";
+import { LanguageContext } from "./LanguageContext";
 
-import { TodoList } from "./TodoList";
 
 export class App extends React.Component {
+  state={
+    language: "en",
+  }
+ChangeLanguage=(event)=>{
+  this.setState({
+    language: event.target.value
+  })
+}
+
   render() {
     return (
       <div>
-        <TodoList
-          render={(items, HandleRemove) => (
-            <ul>
-              {items.map((item, index) => (
-                <div>
-                  <li key={index}>{item}</li>
-                  <button onClick={() => HandleRemove(index)}>Remove</button>
-                </div>
-              ))}
-            </ul>
-          )}
-        />
+       <select value={this.state.language} onChange={this.ChangeLanguage}>
+         <option value="en">English</option>
+         <option value="it">Italiano</option>
+       </select>
+       <LanguageContext.Provider value={this.state.language}>
+         <DisplayLanguage/>
+       </LanguageContext.Provider>
       </div>
     );
   }
