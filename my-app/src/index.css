@@ -1,0 +1,10 @@
+/*.welcome{
+    background-color: aquamarine;
+    border: 2px solid black;
+}*/
+
+.container{
+    background-color: white;
+    border: 2px solid red;
+    padding: 5px;
+}
