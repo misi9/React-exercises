@@ -1,7 +1,7 @@
 import React from "react";
 
-export function Sum(props){
- let sum = props.numbers.reduce((prev,next)=>{
+export function Sum({numbers=[1,2,3,4,5,7]}){
+ let sum = numbers.reduce((prev,next)=>{
      return prev + next
  })
  
@@ -12,3 +12,4 @@ export function Sum(props){
      </h1>
  </div>)
 }
+
