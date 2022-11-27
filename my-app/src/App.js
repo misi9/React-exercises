@@ -10,7 +10,7 @@ import { LoginForm } from "./LoginForm";
 export class App extends React.Component{
   render(){
     return (
-    <Container>
+    <Container title="Il mio container">
       <LoginForm/>
     </Container>
     )
