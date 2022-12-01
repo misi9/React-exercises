@@ -1,58 +1,17 @@
-//import React from "react";
-//import { CounterDisplay } from "./CounterDisplay";
-
-//export class Counter extends React.Component{
-//state = {
-//    count: this.props.initialValue,
-//}
-
-//componentDidMount(){
-//   setInterval(()=>{
-//     this.setState((state)=>{
-//       return{
-//           count: state.count + this.props.incrementBy,
-//       }
-//    })
-//   },this.props.timeOut)
-// }
-
-//Penso che il costruttore non serva siccome componentDidMount() è invocato dopo che il componente è montato (cioè inserito nell’albero del DOM)
-
-// render(){
-//     return(
-//        <div>
-//          <CounterDisplay count ={this.state.count}/>
-//        </div>
-//     )
-// }
-//}
-
-//Counter.defaultProps ={
-//    initialValue: 0,
-//    incrementBy: 1,
-//    timeOut : 1000,
-//}
-
-import { useEffect, useState } from "react";
+import { useCounter } from "./useCounter";
 
 export function Counter({initialValue = 0}) {
-  const [count, setCount] = useState(initialValue)
+  const { counter, onIncrement, onDecrement, onReset } = useCounter(initialValue)
 
-  useEffect(() => {
-    console.log(`Il numero è ${count}`)
-    return () => {
-      console.log(`Il numero era ${count}`)
-    }
-  }, [count]);
-
-  function handleUpdateCount() {
-    setCount((c) => c + 1)
-  }
+  
+  
 
   return (
     <div>
-      <p>Counter: {count}</p>
-      <button onClick={handleUpdateCount}>Increment</button>
+      <p>The value of the counter is {counter}</p>
+      <button onClick={onIncrement}>Increment</button>
+      <button onClick={onDecrement}>Decrement</button>
+      <button onClick={onReset}>Reset</button>
     </div>
   );
 }

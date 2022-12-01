@@ -1,5 +1,6 @@
 import React from "react";
-import { GithubUserList } from "./GithubUserList";
+import { Counter } from "./Counter";
+
 
 
 
@@ -9,7 +10,9 @@ export class App extends React.Component {
 
   render() {
     return (
-      <GithubUserList/>
+     <div>
+       <Counter/>
+     </div>
     )
   }
 }
