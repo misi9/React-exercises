@@ -16,7 +16,7 @@ export function GithubUser({username}){
 
     return (
         <div>
-         {data && <h1>{data.username}</h1>}
+         {data && <h1>L'accesso è stato effettuato da {data.login}</h1>}
         </div>
     )
 }
