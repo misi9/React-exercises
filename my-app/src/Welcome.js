@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Age} from "./Age"
 
 //export class Welcome extends React.Component{
@@ -26,7 +25,6 @@ export function Welcome ({name, age}){
        <div>
            <p>Welcome {name}</p>
            <Age age={age}/>
-           <Link to="/counter">Let's count</Link>
        </div>
    )
 }
