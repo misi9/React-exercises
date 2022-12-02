@@ -3,16 +3,14 @@ import { useGithubUser } from "./useGithubUser"
 
 export function GithubUser(){
     const { username } = useParams();
-    const{data, loading, error, onFetchUser} = useGithubUser(username)
+    const{data, loading, error, onRefresh} = useGithubUser(username)
 
-    function handleGetUserData(){
-        onFetchUser(username)
-    }
+    
     
 
     return (
         <div>
-        <button onClick={handleGetUserData}>Ricarica utente</button>
+        <button onClick={onRefresh}>Ricarica utente</button>
          {data && <h1>L'accesso è stato effettuato da {data.login}</h1>}
          {loading && <h1>Caricamento...</h1>}
          {error && <h1>Errore</h1>}
