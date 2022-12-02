@@ -1,10 +1,7 @@
 import { useCounter } from "./useCounter";
 
 export function Counter({initialValue = 0}) {
-  const { counter, onIncrement, onDecrement, onReset } = useCounter(initialValue)
-
-  
-  
+const { counter, onIncrement, onDecrement, onReset} = useCounter(initialValue)
 
   return (
     <div>
