@@ -18,11 +18,11 @@ import { Age} from "./Age"
 //};
 
 
-export function Welcome (props){
+export function Welcome ({name, age}){
    return (
        <div>
-           <p>Welcome {props.name}</p>
-           <Age age={props.age}/>
+           <p>Welcome {name}</p>
+           <Age age={age}/>
        </div>
    )
 }
