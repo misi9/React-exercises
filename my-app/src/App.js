@@ -1,14 +1,12 @@
 import React from "react";
-import { Hello } from "./Hello"
-import {Welcome} from "./Welcome"
+import { Age } from "./Age";
 
 
 export class App extends React.Component{
   render(){
     return (
       <div>
-      <Hello/>
-      <Welcome name = {<strong>Rita</strong>} age = {14}/>
+      <Age age={11}/>
       </div>
     )
     
