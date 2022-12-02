@@ -11,10 +11,10 @@ const list = (list) => {
   const filteredUsers = useMemo(() => users.filter((user) => user.age > 18),[users] )
 
   return (
-  <div>
-    <h3>Le persone maggiorenni sono e seguenti</h3>
-    {list(filteredUsers)}
-  </div>
+   <div>
+     <h3>Le persone maggiorenni sono e seguenti</h3>
+     {list(filteredUsers)}
+   </div>
   )
 }
 
