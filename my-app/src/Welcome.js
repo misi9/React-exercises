@@ -1,0 +1,32 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { Age} from "./Age"
+
+//export class Welcome extends React.Component{
+//    render(){
+       
+ //       return(
+ //           <div className="welcome">
+ //           <p>Welcome, {this.props.name}!</p>
+ //            <Age age = {this.props.age}/> 
+ //           </div>
+ //       )
+//    }
+//}
+
+//Welcome.defaultProps = {
+ //   name : "Jane"
+//};
+
+
+export function Welcome ({name, age}){
+ 
+
+   return (
+       <div>
+           <p>Welcome {name}</p>
+           <Age age={age}/>
+           <Link to="/counter">Let's count</Link>
+       </div>
+   )
+}
