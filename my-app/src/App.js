@@ -31,6 +31,7 @@ export function App() {
           <Route path='/counter' element={<Counter/>}/>
           
           <Route path="/users" element={<GithubUserList/>}>
+            <Route index element={<p>Add a user and select it</p>}/>
             <Route path=":username" element={<GithubUser/>}/> 
           </Route>
             
