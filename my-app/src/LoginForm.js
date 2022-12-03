@@ -7,7 +7,7 @@ export class LoginForm extends React.Component{
       remember: false
   }
 
-  InputTextField = (event) => {
+  inputTextField = (event) => {
      const value = event.target.value
      const name = event.target.name
      const type = event.target.type
@@ -28,9 +28,9 @@ export class LoginForm extends React.Component{
     render(){
         return(
          <div>
-             <input name="username" value={this.state.username} onChange={this.InputTextField}/>
-             <input name="password" type="password" value={this.state.password} onChange={this.InputTextField}/>
-             <input name="remember" type="checkbox" checked={this.state.remember} onChange={this.InputTextField}/>
+             <input name="username" value={this.state.username} onChange={this.inputTextField}/>
+             <input name="password" type="password" value={this.state.password} onChange={this.inputTextField}/>
+             <input name="remember" type="checkbox" checked={this.state.remember} onChange={this.inputTextField}/>
          </div>
         )
     }
