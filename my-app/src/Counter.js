@@ -39,11 +39,16 @@ export function Counter({initialValue = 0}) {
   const [count, setCount] = useState(initialValue)
 
   useEffect(() => {
-    console.log(`Il numero è ${count}`)
+    console.log(`Il counter è stato caricato`)
+    
     return () => {
-      console.log(`Il numero era ${count}`)
+      console.log(`Il counter è stato eliminato`)
     }
-  }, [count]);
+  }, []);
+
+  useEffect(() => {
+    console.log(`attualmente il numero è ${count}` )
+  }, [count])
 
   function handleUpdateCount() {
     setCount((c) => c + 1)
@@ -56,3 +61,7 @@ export function Counter({initialValue = 0}) {
     </div>
   );
 }
+
+
+
+
